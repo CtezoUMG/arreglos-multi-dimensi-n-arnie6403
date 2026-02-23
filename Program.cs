@@ -15,13 +15,23 @@ for (int i = 0; i < n; i++)
 }
 
 // --- INICIO DE LÓGICA DEL ALUMNO ---
-// Instrucción: El alumno debe encontrar el valor máximo del arreglo 'numeros'
-int maximo = numeros[0]; 
-
-// TODO: Implementar el algoritmo de búsqueda aquí
-
-
-// --- FIN DE LÓGICA DEL ALUMNO ---
+        if (numeros.Length == 0)
+        {
+            Console.WriteLine("El arreglo está vacío");
+        }
+        else
+        {
+            int maximo = numeros[0]; // asumimos el primer valor como máximo
+            for (int i = 1; i < numeros.Length; i++)
+            {
+                if (numeros[i] > maximo)
+                {
+                    maximo = numeros[i];
+                }
+            }
+            Console.WriteLine(maximo); // Solo imprimimos el máximo
+        }
+        // --- FIN DE LÓGICA DEL ALUMNO ---
 
 // 2. Salida: Lo que el Autograding comparará
 Console.WriteLine(maximo);
