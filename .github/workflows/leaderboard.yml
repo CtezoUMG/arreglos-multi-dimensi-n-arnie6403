@@ -8,10 +8,8 @@ jobs:
   update-leaderboard:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Leaderboard
+      - name: Update Leaderboard
         uses: mscoutermarsh/classroom-leaderboard@v1
         with:
-          # El nombre debe ser igual al que pusiste en Secrets
           github-token: ${{ secrets.LEADERBOARD_TOKEN }}
-          # Esto crea la tabla en un archivo llamado LEADERBOARD.md
           leaderboard-file: LEADERBOARD.md
