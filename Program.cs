@@ -14,18 +14,17 @@ for (int i = 0; i < n; i++)
     numeros[i] = int.Parse(entrada[i]);
 }
 
-// --- INICIO DE LÓGICA DEL ALUMNO ---
-int maximo = arreglo[0];
+// Declaramos maximo fuera para que pueda imprimirse después
+int maximo = numeros[0];
 
-for (int i = 1; i < arreglo.Length; i++)
+// --- INICIO DE LÓGICA DEL ALUMNO ---
+for (int i = 1; i < numeros.Length; i++)
 {
-    if (arreglo[i] > maximo)
+    if (numeros[i] > maximo)
     {
-        maximo = arreglo[i];
+        maximo = numeros[i];
     }
 }
-
-Console.WriteLine(maximo);
 // --- FIN DE LÓGICA DEL ALUMNO ---
 
 // 2. Salida: Lo que el Autograding comparará
