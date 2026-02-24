@@ -1,6 +1,6 @@
 using System;
 
-// 1. Lectura de datos: Configurada para los Test Cases de GitHub
+// 1. Lectura de datos: Configurada para los Test Cases de GitHub Desktop
 string? linea1 = Console.ReadLine();
 if (string.IsNullOrEmpty(linea1)) return;
 
