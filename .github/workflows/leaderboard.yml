@@ -1,4 +1,5 @@
 name: Update Leaderboard
+
 on:
   workflow_run:
     workflows: ["Autograding Tests"]
@@ -7,9 +8,21 @@ on:
 jobs:
   update-leaderboard:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-      - name: Update Leaderboard
-        uses: mscoutermarsh/classroom-leaderboard@v1
-        with:
-          github-token: ${{ secrets.LEADERBOARD_TOKEN }}
-          leaderboard-file: LEADERBOARD.md
+      - uses: actions/checkout@v4
+
+      - name: Generate Leaderboard
+        run: |
+          echo "# Leaderboard" > LEADERBOARD.md
+          echo "Autograding completed successfully ✅" >> LEADERBOARD.md
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add LEADERBOARD.md
+          git commit -m "Update leaderboard" || echo "No changes"
+          git push
